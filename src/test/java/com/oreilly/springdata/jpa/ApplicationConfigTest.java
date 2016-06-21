@@ -15,15 +15,15 @@
  */
 package com.oreilly.springdata.jpa;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
-
+import com.oreilly.springdata.jpa.core.CustomerRepository;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.oreilly.springdata.jpa.core.CustomerRepository;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertThat;
 
 /**
  * Test case bootstrapping both JavaConfig and XML configuration to validate configuration.
@@ -34,6 +34,8 @@ public class ApplicationConfigTest {
 
 	@Test
 	public void bootstrapAppFromJavaConfig() {
+
+
 
 		ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 		assertThat(context, is(notNullValue()));
